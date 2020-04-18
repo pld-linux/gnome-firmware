@@ -1,0 +1,12 @@
+diff --git a/src/meson.build b/src/meson.build
+index 01c72682af62d5ec784196d571450e129a4530d9..093747887d1952494deb9179ad2decbc532d4f8d 100644
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -40,6 +40,7 @@ if get_option('man')
+       '--name', 'gnome-firmware',
+       '--manual', 'User Commands',
+       '--version-string', meson.project_version(),
++      '--no-discard-stderr',
+     ],
+     install : true,
+     install_dir : join_paths(prefixed_mandir, 'man1'),
