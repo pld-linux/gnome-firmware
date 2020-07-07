@@ -1,12 +1,12 @@
 Summary:	GNOME Firmware - install firmware on devices
 Summary(pl.UTF-8):	GNOME Firmware - instalowanie firmware'u w urządzeniach
 Name:		gnome-firmware
-Version:	3.34.0
+Version:	3.36.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	https://people.freedesktop.org/~hughsient/releases/%{name}-%{version}.tar.xz
-# Source0-md5:	0d5e8b9501986fb03209b273a5c12dee
+# Source0-md5:	4459d62159f75b89ed555515fc950234
 Patch0:		%{name}-man.patch
 URL:		https://gitlab.gnome.org/hughsie/gnome-firmware-updater
 BuildRequires:	ConsoleKit-devel
@@ -66,8 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %ninja_install -C build
 
-# only one, empty translation exists
-#find_lang %{name}
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -78,13 +77,13 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 %update_icon_cache hicolor
 
-%files
-# -f %{name}.lang
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc MAINTAINERS README.md
 %attr(755,root,root) %{_bindir}/gnome-firmware
 %{_datadir}/metainfo/org.gnome.Firmware.metainfo.xml
 %{_desktopdir}/org.gnome.Firmware.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Firmware.svg
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.Firmware.Devel.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Firmware-symbolic.svg
 %{_mandir}/man1/gnome-firmware.1*
