@@ -1,22 +1,23 @@
 Summary:	GNOME Firmware - install firmware on devices
 Summary(pl.UTF-8):	GNOME Firmware - instalowanie firmware'u w urządzeniach
 Name:		gnome-firmware
-Version:	3.36.0
-Release:	2
+Version:	41.0
+Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	https://people.freedesktop.org/~hughsient/releases/%{name}-%{version}.tar.xz
-# Source0-md5:	4459d62159f75b89ed555515fc950234
+# Source0-md5:	6d5b137e813226b98f5de42efa1d30f6
 Patch0:		%{name}-man.patch
 URL:		https://gitlab.gnome.org/hughsie/gnome-firmware-updater
 BuildRequires:	ConsoleKit-devel
 BuildRequires:	appstream-glib
 BuildRequires:	desktop-file-utils
-BuildRequires:	fwupd-devel >= 1.2.10
+BuildRequires:	fwupd-devel >= 1.5.5
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 2.0
 BuildRequires:	gtk+3-devel >= 3.11.2
 BuildRequires:	help2man
+BuildRequires:	libhandy1-devel >= 1.2
 BuildRequires:	libsoup-devel >= 2.52
 BuildRequires:	libxmlb-devel >= 0.1.7
 BuildRequires:	meson >= 0.46.0
@@ -27,9 +28,10 @@ BuildRequires:	systemd-devel >= 1:211
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
-Requires:	fwupd >= 1.2.10
+Requires:	fwupd >= 1.5.5
 Requires:	gtk+3 >= 3.11.2
 Requires:	hicolor-icon-theme
+Requires:	libhandy1 >= 1.2
 Requires:	libsoup >= 2.52
 Requires:	libxmlb >= 0.1.7
 Obsoletes:	gnome-firmware-updater
@@ -84,6 +86,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.gnome.Firmware.metainfo.xml
 %{_desktopdir}/org.gnome.Firmware.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Firmware.svg
-%{_iconsdir}/hicolor/scalable/apps/org.gnome.Firmware.Devel.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Firmware-symbolic.svg
 %{_mandir}/man1/gnome-firmware.1*
