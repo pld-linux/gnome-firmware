@@ -1,23 +1,24 @@
+# TODO: switch to gtk4-update-icon-cache
 Summary:	GNOME Firmware - install firmware on devices
 Summary(pl.UTF-8):	GNOME Firmware - instalowanie firmware'u w urządzeniach
 Name:		gnome-firmware
-Version:	41.0
+Version:	42.2
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	https://people.freedesktop.org/~hughsient/releases/%{name}-%{version}.tar.xz
-# Source0-md5:	6d5b137e813226b98f5de42efa1d30f6
+# Source0-md5:	11df039b44ddb2c78a304805f8b4f3c9
 Patch0:		%{name}-man.patch
 URL:		https://gitlab.gnome.org/hughsie/gnome-firmware-updater
 BuildRequires:	ConsoleKit-devel
 BuildRequires:	appstream-glib
 BuildRequires:	desktop-file-utils
-BuildRequires:	fwupd-devel >= 1.5.5
+BuildRequires:	fwupd-devel >= 1.7.5
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 2.0
-BuildRequires:	gtk+3-devel >= 3.11.2
+BuildRequires:	gtk4-devel >= 4.2
 BuildRequires:	help2man
-BuildRequires:	libhandy1-devel >= 1.2
+BuildRequires:	libadwaita-devel >= 1.0.0
 BuildRequires:	libsoup-devel >= 2.52
 BuildRequires:	libxmlb-devel >= 0.1.7
 BuildRequires:	meson >= 0.46.0
@@ -28,13 +29,13 @@ BuildRequires:	systemd-devel >= 1:211
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
-Requires:	fwupd >= 1.5.5
-Requires:	gtk+3 >= 3.11.2
+Requires:	fwupd >= 1.7.5
+Requires:	gtk4 >= 4.2
 Requires:	hicolor-icon-theme
-Requires:	libhandy1 >= 1.2
+Requires:	libadwaita >= 1.0.0
 Requires:	libsoup >= 2.52
 Requires:	libxmlb >= 0.1.7
-Obsoletes:	gnome-firmware-updater
+Obsoletes:	gnome-firmware-updater < 3.36
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
