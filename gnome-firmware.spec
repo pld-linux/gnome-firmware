@@ -2,12 +2,12 @@
 Summary:	GNOME Firmware - install firmware on devices
 Summary(pl.UTF-8):	GNOME Firmware - instalowanie firmware'u w urządzeniach
 Name:		gnome-firmware
-Version:	42.2
-Release:	2
+Version:	43.2
+Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	https://people.freedesktop.org/~hughsient/releases/%{name}-%{version}.tar.xz
-# Source0-md5:	11df039b44ddb2c78a304805f8b4f3c9
+# Source0-md5:	456ea28c4cc85dd9698917a5868252cc
 Patch0:		%{name}-man.patch
 URL:		https://gitlab.gnome.org/hughsie/gnome-firmware-updater
 BuildRequires:	ConsoleKit-devel
