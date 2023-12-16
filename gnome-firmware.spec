@@ -2,23 +2,23 @@
 Summary:	GNOME Firmware - install firmware on devices
 Summary(pl.UTF-8):	GNOME Firmware - instalowanie firmware'u w urządzeniach
 Name:		gnome-firmware
-Version:	43.2
+Version:	45.0
 Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	https://people.freedesktop.org/~hughsient/releases/%{name}-%{version}.tar.xz
-# Source0-md5:	456ea28c4cc85dd9698917a5868252cc
+# Source0-md5:	169ccd79b918a5ed2485810253fc1155
 Patch0:		%{name}-man.patch
 URL:		https://gitlab.gnome.org/hughsie/gnome-firmware-updater
 BuildRequires:	ConsoleKit-devel
 BuildRequires:	appstream-glib
 BuildRequires:	desktop-file-utils
-BuildRequires:	fwupd-devel >= 1.7.5
+BuildRequires:	fwupd-devel >= 1.8.11
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 2.0
+BuildRequires:	glib2-devel >= 1:2.74.0
 BuildRequires:	gtk4-devel >= 4.2
 BuildRequires:	help2man
-BuildRequires:	libadwaita-devel >= 1.0.0
+BuildRequires:	libadwaita-devel >= 1.4
 BuildRequires:	libsoup-devel >= 2.52
 BuildRequires:	libxmlb-devel >= 0.1.7
 BuildRequires:	meson >= 0.46.0
@@ -29,10 +29,11 @@ BuildRequires:	systemd-devel >= 1:211
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
-Requires:	fwupd >= 1.7.5
+Requires:	fwupd >= 1.8.11
+Requires:	glib2 >= 1:2.74.0
 Requires:	gtk4 >= 4.2
 Requires:	hicolor-icon-theme
-Requires:	libadwaita >= 1.0.0
+Requires:	libadwaita >= 1.4
 Requires:	libsoup >= 2.52
 Requires:	libxmlb >= 0.1.7
 Obsoletes:	gnome-firmware-updater < 3.36
@@ -68,9 +69,6 @@ Ta aplikacja potrafi:
 rm -rf $RPM_BUILD_ROOT
 
 %ninja_install -C build
-
-# unify
-%{__mv} $RPM_BUILD_ROOT%{_localedir}/{fr_FR,fr}
 
 %find_lang %{name}
 
