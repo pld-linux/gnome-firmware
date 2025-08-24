@@ -23,7 +23,7 @@ BuildRequires:	libxmlb-devel >= 0.1.7
 BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	systemd-devel >= 1:211
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
